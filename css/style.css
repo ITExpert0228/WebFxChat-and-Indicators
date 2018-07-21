@@ -1,0 +1,459 @@
+html
+{
+  overflow: auto; 
+}
+body{
+  overflow: hidden; 
+}
+.chart
+{
+  width:100%; 
+  height:700px; 
+  margin:10px;
+  padding-right: 10px;
+}
+.chart * {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+}
+div.fullscreen
+{
+  width: 100% !important;
+  position: fixed !important;
+  height: 100% !important;
+  z-index: 9999 !important;
+  top: 0;
+  background: #fff;
+}
+div.fullscreen .chart
+{
+  height: 94%;
+}
+/*div.fullscreen .amcharts-panels-div
+{
+  position: fixed;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: #fff;
+}*/
+.cencelFullscreen
+{
+  display: none;
+  position: fixed;
+  top: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 9999999; 
+  width: 150px;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.3); 
+} 
+
+.amChartsButton, .amChartsButtonSelected  {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid  #ddd;
+    border-radius: 5px;
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    margin: 0 2.5px;
+    font-size: 12px;
+    padding: 4px 15px;
+     -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.amChartsButtonSelected
+{
+  border-color: #333;
+  background: #333;
+  color: #fff;
+}
+.options
+{
+  position: absolute;
+  right: 55px;
+  top: 3px;
+  z-index: 1;
+}
+.options a
+{
+  padding: 3px 5px;
+  background: #505050;
+  color: #fff;
+  text-decoration: none !important;
+  margin-left: 5px;
+  opacity: 0.9;
+}
+.options a:hover
+{
+  opacity: 1;
+}
+.options a.active
+{
+  background: #4e93b0;
+}
+.indicators
+{
+  position: absolute;
+  left: 0px;
+  right: initial;
+  top: 30px;
+  opacity: .7;
+  z-index: 999;
+}
+.indicators .options
+{
+  position: relative;
+  left: 0;
+  right: initial;
+  margin-bottom: 5px;
+}
+.indicators .options .name
+{
+  font-family: sans-serif;
+}
+#custom-indicators-chart .amChartsPanel
+{
+  top: 0 !important;
+  border-top: 1px solid #bbb;
+  margin-top: -1px !important;
+}
+#custom-indicators-chart .amChartsPanel:first-child
+{
+  border: 0;
+}
+/*.head-options
+{
+  margin-top: -67px;
+  margin-right: -15px;
+}*/
+.head-options
+{
+/*  position: absolute;
+  top: -43px;
+  right: 0;*/
+  margin-bottom: 20px;
+  z-index: 4;
+  position: relative;
+}
+.head-options .btn
+{
+  padding:6px 10px;
+  height: 34px;
+}
+.head-options .btn .fa
+{
+  font-size: 18px;
+  margin: 1px 4px;
+}
+[type="color"]
+{
+  padding: 0px;
+  margin: 0;
+  width: 32px;
+  border: 1px solid #7a7a7a;
+  border-radius: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+.amcharts-axis-grid
+{
+  stroke-opacity: 0.1;
+}
+.modal-content
+{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
+    border: 0;
+    border-radius: 3px;
+}
+.btn-group .btn.active
+{
+    background: #333;
+    color: #fff;
+}
+.loading
+{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height:100%;
+  background-color: rgba(255,255,255,0.4) !important;
+  background-image: url(../img/2.gif) !important;
+  background-size: 30px !important;
+  z-index: 9999999999;
+  display: none;
+}
+.mycheckbox
+{
+  display: inline-block;
+  margin-bottom: -5px;
+  margin-left: 10px;
+}
+.mycheckbox .item
+{
+  float: left;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.mycheckbox .item .check-box
+{
+  width: 17px;
+  height: 15px;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  float: left;
+  cursor: pointer;
+  position: relative;
+  background: #aaa;
+}
+.mycheckbox .item .check-box:after
+{
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 11px;
+  left: 2px;
+  top: 2px;
+  background: #fff;
+  z-index: 1;
+}
+.mycheckbox .item.active .check-box:after
+{
+  background: none;
+}
+.mycheckbox .item.active .check-box:before
+{
+  content: "\f00c";
+  font: normal normal normal 14px/1 FontAwesome;
+  position: absolute;
+  color: #fff;
+  margin: auto;
+  left: 1px;
+  font-size: 13px;
+  top: 1px; 
+}
+.mycheckbox .item .check-label
+{
+  float: left;
+  margin-left: 4px;
+}
+.setColors .item
+{
+  width: 50%;
+  padding: 4px; 
+  position: relative; 
+  cursor: pointer;
+  display: inline-block;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.setColors .item .color
+{
+  width: 20px;
+  height: 16px;
+  float: left;
+  margin-right: 10px;
+}
+.setColors .item .text
+{
+  float: left;
+  white-space: nowrap;
+  cursor: default;
+  margin-right: 20px;
+}
+#current-strngth-chart .amcharts-data-set-selector-div
+{
+  display: none;
+}
+.amcharts-panels-div
+{
+  display:initial;
+}
+#custom-indicators-chart .amcharts-panels-div .amChartsPanel:first-child .amChartsLegend svg g > g > g[aria-label]
+{
+  display: none;
+}
+#custom-indicators-chart .amcharts-panels-div .amChartsPanel:first-child .amChartsLegend svg g > g > g[aria-label]:first-child
+{
+  display: block;
+}
+.edit-color
+{
+  padding: 3px 5px;
+  background: #505050;
+  color: #fff !important;
+  text-decoration: none !important;
+  float: right;
+  position: absolute;
+  right: 159px;
+  margin-top: 13px;
+  z-index: 10;
+}
+select.form-control
+{
+  height: 34px;
+  background: #fff;
+  padding: 0px 5px;
+  -webkit-appearance: menulist-button;
+}
+select.sambols
+{
+  position: relative;
+  top: 2px;
+}
+ul#custom-values {
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 5px;
+    z-index: 10;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+ul#custom-values li {
+    display: block;
+    float: left;
+    margin-left: 15px;
+}
+ul#custom-values li .name
+{
+  margin-right: 4px;
+}
+ul#custom-values li .value
+{
+  color: #F44336;
+}
+g.amcharts-graph-bullet circle {
+    r: 11 !important;
+}
+.amcharts-balloon-div .table-news
+{
+  width: 280px;
+  font-size: 13px;
+  margin: 10px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 19px;
+}
+.amcharts-balloon-div .table-news td
+{
+  text-align: left;
+}
+.amcharts-balloon-div .table-news td .label
+{
+  line-height: 12px;
+  padding-bottom: 2px;
+  text-transform: capitalize;
+}
+.amcharts-balloon-div .table-news td .label.low
+{
+  background-color: #5bc0de;
+}
+.amcharts-balloon-div .table-news td .label.medium
+{
+  background-color: #ffb953;
+}
+.amcharts-balloon-div .table-news td .label.high
+{
+   background-color: #d9534f;
+}
+path.amcharts-balloon-bg {
+    fill-opacity: 1;
+}
+.amcharts-tootips
+{
+    max-width: 100% !important;
+    background: #fff;
+    border:2px solid red; 
+}
+li.jqx-ribbon-item {
+    font-family: 'Open Sans',sans-serif;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+text.amcharts-graph-label {
+    font-weight: bold;
+}
+text.amcharts-graph-label[font-size="12px"] tspan {
+    font-size: 15px;
+}
+text.amcharts-graph-label[font-size="10px"] tspan {
+    font-size: 10px;
+}
+text.amcharts-graph-label[font-size="8px"] tspan {
+    font-size: 11px;
+}
+.scroll-lr
+{
+    position: absolute;
+    right: 15px;
+    z-index: 999;
+    width: 35px;
+    padding: 4px 0;
+    text-align: center;
+    line-height: 12px;
+    margin-top: 5px;
+    bottom: 30px;
+}
+.scroll-lr.active
+{
+    background: #333;
+    color: #fff;
+}
+#Custom-Indicators .scroll-lr
+{
+    bottom: -20px;
+}
+.scroll-lr span
+{
+    font-size: 19px !important;
+    margin: 0 !important;
+}
+.e-resize .amcharts-chart-div
+{
+  cursor: e-resize !important;
+}
+.amcharts-chart-div > a {
+    left: 0 !important;
+    right: initial;
+}
+.mgtcc
+{
+  margin-top: 10px;
+}
+@media (max-width: 1335px)
+{
+  .mgtcc
+  {
+    margin-top: -10px;
+  }
+}
+#current-strngth-chart {
+    height: 678px;
+}
